@@ -1,30 +1,41 @@
-#include<stdio.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-int main(){
-    int a1, b1, c1, a2, b2, c2;
-    float D, Dx, Dy, x, y;
-    printf("a1*x + b1*y = c1\n");
-    printf("a2*x + b2*y = cc\n");
-    printf("\nNhap a1: "); scanf("%d", &a1);
-    printf("\nNhap b1: "); scanf("%d", &b1);
-    printf("\nNhap c1: "); scanf("%d", &c1);
-    printf("\nNhap a2: "); scanf("%d", &a2);
-    printf("\nNhap b2: "); scanf("%d", &b2);
-    printf("\nNhap c2: "); scanf("%d", &c2);
-    D = a1 * b2 - a2 * b1;
-    Dx = c1 * b2 - c2 * b1;
-    Dy = a1 * c2 - a2 * c1;
-    if (D == 0) {
-        if (Dx + Dy == 0)
-            printf("He phuong trinh co vo so nghiem");
-        else
-            printf("He phuong trinh vo nghiem");
+int main(int argc, char *argv[]) {
+    int n, i,j;
+    printf("Hay nhap so phan tu: ");
+    scanf("%d", &n);
+
+    int arr[n];
+
+    for(i = 1; i <= n; i++) {
+        printf("Hay nhap phan tu N[%d]: ", i);
+        scanf("%d", &arr[i]);
     }
-    else {
-        x = Dx / D;
-        y = Dy / D;
-        printf("He phuong trinh co nghiem (x, y) = (%d, %d)", x, y);
+
+    
+    printf("Cac phan tu trong mang la: ");
+    for(i = 1; i <= n; i++) {
+        printf("%d ", arr[i]);
     }
+    
+  int tg;
+ 
+    for( i = 0; i < n - 1; i++){
+        for( j = i + 1; j < n; j++){
+            if(arr[i] < arr[j]){
+                // Hoan vi 2 so a[i] va a[j]
+                tg = arr[i];
+                arr[i] = arr[j];
+                arr[j] = tg;        
+            }
+        }
+    }
+printf("\nKet qua sap xep: ");
+				for(i=0;i<n;i++) {
+					printf("%d ", arr[i]);
+				}
+				printf("\n");
     return 0;
 }
 
