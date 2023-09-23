@@ -2,80 +2,49 @@
 #include <stdlib.h>
 
 int main(int argc, char *argv[]) {
-    int n, i,j;
-    printf("Hay nhap so phan tu: ");
-    scanf("%d", &n);
-char choose;
-    int arr[n];
+char Chuoi[100];
+   int a;
+  
+   printf("\nNhap mot chuoi bat ky: ");
+   gets(Chuoi);
+   a = strlen(Chuoi);
+  
+   printf("\nDo dai cua chuoi la: %d", a);
+   
+   
+   //bai 2
+char s1[100];
+char s2[100];
+int b,c,d;
 
-    for(i = 1; i <= n; i++) {
-        printf("Hay nhap phan tu N[%d]: ", i);
-        scanf("%d", &arr[i]);
-    }
+printf("\nNhap chuoi s1: ");
+gets(s1);
+b = strlen(s1);
+printf("\nNhap chuoi s2: ");
+gets(s2);
+c = strlen(s2);
+strcat(s1, s2);
+d = b+c;
+printf("\n%s", s1);
+printf("\nChuoi co do dai la %d", d);
 
-
-				do {
-		printf("\n1. Ban co muon hoan doi vi tri thanh giam gian ");
-		printf("\n2. Ban khong muon hoan doi vi tri ");
-		printf("\n Vui long chon: ");
-		fflush(stdin);fflush(stdout);
-		scanf("%c", &choose);
-		
-		switch(choose) {
-			case '1': { int tg;
- 
-    for( i = 0; i < n - 1; i++){
-        for( j = i + 1; j < n; j++){
-            if(arr[i] < arr[j]){
-                
-                tg = arr[i];
-                arr[i] = arr[j];
-                arr[j] = tg;        
-            }
-        }
-    }
-printf("\nKet qua sap xep: ");
-				for(i=0;i<n;i++) {
-					printf("%d ", arr[i]);
-				}
-				printf("\n");
-				
-				break;
-			}
-			case'2':{printf("Cac phan tu trong mang la: ");
-    for(i = 1; i <= n; i++) {
-        printf("%d ", arr[i]);
-    }
-				
-				
-				break;
-			}}}
-			while(choose != '2', choose != '1');
-    return 0;
-}
-    
-    printf("Cac phan tu trong mang la: ");
-    for(i = 1; i <= n; i++) {
-        printf("%d ", arr[i]);
-    }
-    
-  int tg;
- 
-    for( i = 0; i < n - 1; i++){
-        for( j = i + 1; j < n; j++){
-            if(arr[i] < arr[j]){
-                // Hoan vi 2 so a[i] va a[j]
-                tg = arr[i];
-                arr[i] = arr[j];
-                arr[j] = tg;        
-            }
-        }
-    }
-printf("\nKet qua sap xep: ");
-				for(i=0;i<n;i++) {
-					printf("%d ", arr[i]);
-				}
-				printf("\n");
-    return 0;
+//bai 3
+char str[100];
+int j;
+int DoDai;
+printf("\nNhap chuoi str: ");
+gets(str);
+DoDai = strlen(str);
+printf(
+"Hien thi str = ");
+int i;
+for(i=0; i<DoDai; i++){
+	printf("\n%c", str(i));
 }
 
+
+
+
+
+    return 0;
+}
